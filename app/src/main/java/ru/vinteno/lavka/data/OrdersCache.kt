@@ -37,6 +37,20 @@ object OrdersCache {
                 name = "Общежитие 5, комната 312",
                 status = "Новый",
                 dateTime = "2025-10-06T19:00:00"
+            ),
+            Order(
+                id = 1,
+                products = "Вода, хлеб",
+                name = "Общежитие 2, комната 112",
+                status = "Новый",
+                dateTime = "2025-10-06T19:00:00"
+            ),
+            Order(
+                id = 1,
+                products = "Варенье, Масло",
+                name = "Общежитие 4, комната 342",
+                status = "Новый",
+                dateTime = "2025-10-06T19:00:00"
             )
         )
     }

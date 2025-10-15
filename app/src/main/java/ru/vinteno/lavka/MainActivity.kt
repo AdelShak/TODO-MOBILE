@@ -10,7 +10,9 @@ import ru.vinteno.lavka.ui.OrdersViewModel
 import android.widget.Toast
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import ru.vinteno.lavka.ui.OrderItemDecoration
+import ru.vinteno.lavka.ui.OrdersAdapter
 
 class MainActivity : AppCompatActivity() {
     private val viewModel: OrdersViewModel by viewModels()
@@ -18,6 +20,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val adapter = OrdersAdapter()
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -40,6 +44,10 @@ class MainActivity : AppCompatActivity() {
         btnRefresh.setOnClickListener { viewModel.refresh() }
 
         // TODO: Задание 1 - Создайте адаптер OrdersAdapter и подключите его к RecyclerView
+
+        recycler.adapter = adapter
+        recycler.layoutManager = LinearLayoutManager(this)
+
 
         val spacing = resources.getDimensionPixelSize(R.dimen.spacing_sm)
         recycler.addItemDecoration(OrderItemDecoration(spacing))
@@ -67,6 +75,7 @@ class MainActivity : AppCompatActivity() {
                         stateError.isVisible = false
                         stateEmpty.isVisible = false
                         swipe.isRefreshing = false
+                        adapter.submitList(state.orders)
                     }
 
                     is OrdersUiState.Empty -> {
