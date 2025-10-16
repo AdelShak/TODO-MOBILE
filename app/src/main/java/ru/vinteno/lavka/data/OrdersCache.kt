@@ -39,16 +39,30 @@ object OrdersCache {
                 dateTime = "2025-10-06T19:00:00"
             ),
             Order(
-                id = 1,
+                id = 2,
                 products = "Вода, хлеб",
                 name = "Общежитие 2, комната 112",
                 status = "Новый",
                 dateTime = "2025-10-06T19:00:00"
             ),
             Order(
-                id = 1,
+                id = 3,
                 products = "Варенье, Масло",
                 name = "Общежитие 4, комната 342",
+                status = "Новый",
+                dateTime = "2025-10-06T19:00:00"
+            ),
+            Order(
+            id = 4,
+            products = "Шоколад Milka, M&M's",
+            name = "Общежитие 5, комната 312",
+            status = "Новый",
+            dateTime = "2025-10-06T19:00:00"
+            ),
+            Order(
+                id = 5,
+                products = "Тетради (5 шт.), Ручка",
+                name = "Учебный корпус 3, ауд. 101",
                 status = "Новый",
                 dateTime = "2025-10-06T19:00:00"
             )
